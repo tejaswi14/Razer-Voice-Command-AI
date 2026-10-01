@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mia Voice Command AI</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">R</div><div><strong>Mia AI</strong><span>Voice Command Center</span></div></div>
+      <div class="status-card"><span class="status-dot"></span><div><strong id="statusText">Ready</strong><small>Browser voice engine</small></div></div>
+      <button class="new-chat" id="clearBtn">＋ New conversation</button>
+      <nav><a class="active">◉ Assistant</a><a href="#commands">⌘ Commands</a><a href="#history">◷ History</a></nav>
+      <div class="sidebar-bottom"><small>Local full-stack demo</small><small>FastAPI + SQLite + Web Speech API</small></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div><p class="eyebrow">VOICE AUTOMATION</p><h1>How can I help?</h1></div><div class="top-actions"><span id="backendStatus" class="pill">● Connecting</span><button id="voiceTop" class="icon-btn">🎙</button></div></header>
+
+      <section class="hero" id="assistant">
+        <div class="orb-wrap"><div class="orb" id="orb"><span>◉</span></div><div class="rings"></div></div>
+        <h2 id="heroTitle">Say a command</h2>
+        <p id="heroSubtitle">Try “Hey Mia, open YouTube”</p>
+        <button class="mic-btn" id="micBtn"><span>🎙</span><b>Start listening</b></button>
+        <p class="hint">Your browser may ask for microphone permission.</p>
+      </section>
+
+      <section class="conversation" id="conversation"></section>
+
+      <section class="panel" id="commands">
+        <div class="section-head"><div><p class="eyebrow">COMMAND LIBRARY</p><h3>Available actions</h3></div><span class="count" id="commandCount">0 commands</span></div>
+        <div class="command-grid" id="commandGrid"></div>
+      </section>
+
+      <section class="panel" id="history">
+        <div class="section-head"><div><p class="eyebrow">ACTIVITY</p><h3>Recent commands</h3></div><button class="text-btn" id="refreshHistory">Refresh</button></div>
+        <div class="history-list" id="historyList"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
