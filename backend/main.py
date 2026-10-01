@@ -14,7 +14,7 @@ DB_PATH = BASE_DIR / 'data' / 'assistant.db'
 FRONTEND_DIR = BASE_DIR / 'frontend'
 DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-app = FastAPI(title='Mia Voice Command AI', version='1.0.0')
+app = FastAPI(title='Razer Voice Command AI', version='1.0.0')
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
@@ -79,7 +79,7 @@ def normalize(text: str) -> str:
 
 def strip_wake_word(text: str) -> str:
     value = normalize(text)
-    for wake in ('hey Mia', 'hey razor', 'Mia', 'razor', 'hey assistant'):
+    for wake in ('hey razer', 'hey razor', 'razer', 'razor', 'hey assistant'):
         if value.startswith(wake):
             return value[len(wake):].strip()
     return value
@@ -116,7 +116,7 @@ def startup():
 
 @app.get('/api/health')
 def health():
-    return {'status': 'ok', 'assistant': 'Mia Assistant'}
+    return {'status': 'ok', 'assistant': 'Razer Assistant'}
 
 
 @app.get('/api/commands')
